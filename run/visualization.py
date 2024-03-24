@@ -20,9 +20,19 @@ def main():
         layout='wide',
     )
 
+
+    container_price_by_class = st.container(border=True) 
+    container_price_by_class.title("Airline prices based on the class") 
+    holder_price_by_class = container_price_by_class.empty()
+
+    container_stop_count = st.container(border=True) 
+    container_stop_count.title("Airline prices based on the stop") 
+    holder_stop_count = container_stop_count.empty()
+
     container_price = st.container(border=True) 
     container_price.title("Price") 
     holder_price = container_price.empty()
+
 
     container_score = st.container(border=True) 
     container_score.title("Model r2 score") 
@@ -35,11 +45,17 @@ def main():
         if data is not None:
             if data_topic == "raw_data": 
                 data = pd.DataFrame(data)
-                st.session_state["price"].append(data['price'])
-                holder_price.line_chart(st.session_state["price"].) 
+                
+                holder_price.bar_chart(data=data.price.value_counts())
+
+                holder_stop_count.bar_chart(data=data.stops.value_counts())
+
+                holder_price_by_class.scatter_chart(data, x='class', y='price') 
+
             elif data_topic == "ML_results":
                 st.session_state["r2 score"].append(data["r2"]) 
-                holder_score.line_chart(st.session_state["r2 score"]) 
+                holder_score.line_chart(st.session_state["r2 score"])
+
 
 if __name__ == '__main__':
     main()

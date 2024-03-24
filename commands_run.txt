@@ -3,3 +3,9 @@ docker-compose up -d
 
 Отключение докера:
 docker-compose down
+
+python3 ./run/data_generation.py 
+python3 ./run/processing.py
+python3 ./run/inference.py
+
+python3 -m streamlit run ./run/visualization.py

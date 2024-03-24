@@ -1,0 +1,1 @@
+DATA_PATH = '/home/new_user/Lab-Apache-Kafka/data/flight_price.csv'

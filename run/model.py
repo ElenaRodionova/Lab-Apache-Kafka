@@ -9,7 +9,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 from utils import load_data, make_mi_scores
 
-
 class Predictor:
     def __init__(self):
         self.poly_feat = PolynomialFeatures(degree=2)
@@ -19,14 +18,15 @@ class Predictor:
     def _fit(self):
         data = load_data().copy()
         features = self.poly_feat.fit_transform(data.drop('price', axis=1))
-        self.model.fit(features, data['price'])       
+        self.model.fit(features, data['price'].values)      
         predictions = self.model.predict(features)
-        r_squared = self.model.score(data['price'], predictions)
+        r_squared = self.model.score(features, data['price'].values)
         print(f"R-squared score: {r_squared}")
 
     def predict(self, X):
         X_poly = self.poly_feat.transform(X)
         return self.model.predict(X_poly)
-
+'''
 if __name__ == "__main__":
     Predictor()
+'''

@@ -5,7 +5,7 @@ from sklearn.feature_selection import mutual_info_regression
 
 
 def load_data():
-    return pd.read_csv(DATA_PATH, index_col=False)
+    return pd.read_csv(DATA_PATH, index_col=False).sample(frac = 0.1)
 
 
 def make_mi_scores(X, y):

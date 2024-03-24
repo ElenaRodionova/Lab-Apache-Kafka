@@ -8,3 +8,6 @@
 - Обработка данных, препроцессинг
 - Анализ данных с помощью ML/DL
 - Визуализация
+
+## Оригинальный датасет:
+https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction

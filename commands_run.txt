@@ -3,14 +3,3 @@ docker-compose up -d
 
 Отключение докера:
 docker-compose down
-
-Запуск файлов:
-python3 /home/new_user/Lab-Apache-Kafka/data_path.py
-python3 /home/new_user/Lab-Apache-Kafka/utils.py
-python3 /home/new_user/Lab-Apache-Kafka/model/model.py
-python3 /home/new_user/Lab-Apache-Kafka/run/Consumer_and_Producer.py
-python3 /home/new_user/Lab-Apache-Kafka/run/processung.py
-python3 /home/new_user/Lab-Apache-Kafka/run/inference.py
-python3 /home/new_user/Lab-Apache-Kafka/run/data_generation.py
-python3 /home/new_user/Lab-Apache-Kafka/run/ -m streamlit run visualization.py
-
